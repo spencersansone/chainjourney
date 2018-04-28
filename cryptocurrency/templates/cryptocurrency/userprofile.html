@@ -1,0 +1,59 @@
+{% extends 'cryptocurrency/base.html' %}
+{% block title %}Cryptocurrency | User Profile{% endblock %}
+
+{% block body %}
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 0px 0px 15px 15px;text-align:center;border-top: 0px;">
+    <font id="techFont3" style="font-size: 400%">User Profile</font>
+</div>
+
+<div class="col-sm-12">
+    <br>
+</div>
+
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 15px;text-align:center;">
+    <br>
+    <table class="table table-dark table-sm" style="margin: 0px auto;text-align:center;background-color:#0b1d3a;">
+        <thead>
+            <tr>
+                <th colspan='2'>Username: {{username}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>First Name:</td>
+                <td>{{userProfile.firstName}}</td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td>{{userProfile.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <!--<table class="table table-dark table-sm" style="margin: 0px auto;text-align:center;background-color:#0b1d3a;">-->
+    <!--    <thead>-->
+    <!--        <tr>-->
+    <!--            <th colspan=3>Purchases</th>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <th>Date</th>-->
+    <!--            <th>Title</th>-->
+    <!--            <th>Cost</th>-->
+    <!--        </tr>-->
+    <!--    </thead>-->
+    <!--    <tbody>-->
+    <!--        for purchase in userPurchases-->
+    <!--        <tr>-->
+    <!--            <td>purchase.date</td>-->
+    <!--            <td>purchase.title</td>-->
+    <!--            <td>$purchase.cost</td>-->
+    <!--        </tr>-->
+    <!--         endfor -->
+    <!--        <tr>-->
+    <!--            <th colspan=3>Total Invested: {{totalUserPurchaseCost}}</th>-->
+    <!--        </tr>-->
+    <!--    </tbody>-->
+    <!--</table>-->
+    <br>
+</div>
+{% endblock %}

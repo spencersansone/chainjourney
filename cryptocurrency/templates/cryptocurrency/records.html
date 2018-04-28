@@ -1,0 +1,54 @@
+{% extends 'cryptocurrency/base.html' %}
+{% block title %}Cryptocurrency | Records{% endblock %}
+
+{% block body %}
+{% load staticfiles %}
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 0px 0px 15px 15px;text-align:center;border-top: 0px;">
+    <font id="techFont3" style="font-size: 400%">Mining Records</font>
+</div>
+
+<div class="col-sm-12">
+    <br>
+</div>
+
+<div class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 15px;background-color:#030911;text-align:center;">
+    <br>
+    <table class="table table-dark table-sm" style="width:100%;margin: 0px auto;background-color:#0b1d3a;">
+      <thead>
+        <tr>
+          <!--<th colspan="6">-->
+          <!--  <h1>Recent Records <img src="{% static 'cryptocurrency/img/zcash.jpg' %}" alt="zcash"></h1>-->
+          <!--  <h4 id="techFont3"><a href="/miningtracker/">Refresh</a></h4>-->
+          <!--</th>-->
+        </tr>
+        <tr>
+          <th scope="col">Date/Time (EST)</th>
+          <th scope="col">Speeds</th>
+          <th scope="col">Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in recordsArray %}
+          <tr>
+            <td>
+              <p style="font-size: 12px;">{{a.0}}</p>
+            </td>
+            <td>
+              {% for b in a.2%}
+                <p style="font-size: 12px;">{{b.0}}: {{b.1}}</p>
+              {% endfor %}
+              <p style="font-size: 12px;"><strong>Total: {{a.1}}</strong></p>
+              <p style="font-size: 12px;">3hr Avg: {{a.4}}</p>
+              <p style="font-size: 12px;">24hr Avg: {{a.5}}</p>
+            </td>
+            <td>
+              <p style="font-size: 12px;">{{a.3}}</p>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+  <br>
+</div>
+
+{% endblock %}

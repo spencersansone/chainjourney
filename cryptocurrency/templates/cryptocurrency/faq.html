@@ -1,0 +1,273 @@
+{% extends 'cryptocurrency/base.html' %}
+{% block title %}Cryptocurrency | FAQ{% endblock %}
+
+{% block body %}
+{% load staticfiles %}
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 0px 0px 15px 15px;text-align:center;border-top: 0px;">
+    <font id="techFont3" style="font-size: 400%;">Frequently Asked Questions</font>
+</div>
+
+<div class="col-sm-12">
+    <br>
+</div>
+
+
+
+
+<div id="accordion" style="width:100%;">
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingOne" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          What is a cryptocurrency?
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+          <p style="text-indent: 40px;">
+            A cryptocurrency is a digital currency that uses special cryptographical methods to ensure that there is security in every transaction made.
+            Cryptography as a contributing factor is considered a strength since it makes it very difficult for a transaction to be spoofed or for 
+            counterfeit actions to occur. One special quality of cryptocurrencies is that they are decentralized. This means that these types of currencies 
+            have an organic nature in which they are not issued by a governmental authority
+         </p>
+         <figure class="text-center">
+              <img src="{% static 'cryptocurrency/img/cryptoexamples.jpg' %}" class="figure-img img-fluid rounded" alt="Cryptos">
+              <figcaption class="figure-caption">
+                <p>
+                  Some examples of common cryptocurrencies
+                </p>
+                <p>
+                  Source: https://blog.malwarebytes.com/wp-content/uploads/2017/11/Untitled-design.jpg
+                </p>
+              </figcaption>
+          </figure>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingTwo" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          What is a cryptocurrency node?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <p style="text-indent: 40px;">
+           A node is a computer that is actively using cryptocurrency software. It is the responsibility of 
+            the nodes to keep track of the latest transaction information and spread this information as needed to other nodes. This helps the information 
+            about transactions to spread and allows the currency to thrive for all involved.
+         </p>
+         <figure class="text-center">
+           <img src="{% static 'cryptocurrency/img/nodes2.jpg' %}" class="figure-img img-fluid rounded" alt="Nodes">
+           <figcaption class="figure-caption"><p>A nice illustration of how nodes work</p><p>Source: Blockgeeks</p></figcaption>
+         </figure>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="heading2" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+          How does mining work?
+        </button>
+      </h5>
+    </div>
+    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+      <div class="card-body">
+         <p style="text-indent: 40px;">
+            Mining happens when a node is responsible for 
+            grouping outstanding transactions into blocks of information. These blocks are then added to the blockchain; this happens when miners solve 
+            complex math puzzles that are part of the cryptocurrency software. After the math has been solved, the answer to the puzzle is included in the 
+            block. Many may wonder: what is the puzzle? Miners need to figure out a certain number that produces a result that is within a certain range. 
+            This needs to be done when combined with the data involved in a block and passed through a hash function. This number that is being sought after 
+            is called a nonce. In Bitcoin’s case, a nonce has to be an integer between 0 and 4,294,967,296. The strategy involved in finding this mystery 
+            number is to guess randomly until it is found since the hash function makes it pretty much impossible to guess what the outcome will be. The 
+            guessed number is put to the test by applying the hash function to it in combination with data in the block. There may be several validated nonces 
+            that serve as solutions or there may be none at all (in which case miners will attempt again with a different block configuration.) The first 
+            miner that guesses correctly will let the ne2rk know and gets rewarded with an amount of new coins (and fees if applicable.) As a result, other miners will start to 
+            work on the next solution at hand. Another noteable aspect of mining is difficulty. The difficulty is measured by observing how hard it is to 
+            find a satisfactory solution to the puzzle at hand.
+         </p>
+         <p style="text-indent: 40px;">
+           On a related note, miners can choose to either be a part of a collective mining pool that 
+            mines together or they may choose to mine individually. When mining for a pool, there is commonly a fee taken from a miner's earnings to support the 
+            website or company running the pool. Work contributed towards a pool is usually rewarded through a payout; payouts are commonly issued after a certain 
+            earnings threshold has been met. The faster the hashrate (or the speed at which miners complete an operation in the cryptocurrency code) the better the
+            opportunity of finding the next block and receiving the reward. 
+         </p>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingThree" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          What is a blockchain?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+       <p style="text-indent: 40px;">
+           A blockchain is a database that holds information that is shared and continually reconciled. The best part about blockchain is that there is
+          not just one place where it exists; therefore, it is publicly accessed and information can be verified easily. If there were hackers that wanted 
+          to alter this database maliciously, they would have an extremely difficult time since millions of computers simultaneously host the information. 
+          Circumventing verification is the challenge in the hackers’ pathway to corruption. Since the information of the blockchain is not central or tied 
+          to one certain location, it is referred to as decentralized; no single institution can fully control the whole network.
+         </p>
+         <figure class="text-center">
+            <img src="{% static 'cryptocurrency/img/blockchain.jpg' %}" class="figure-img img-fluid rounded" alt="Blockchain">
+            <figcaption class="figure-caption"><p>How to think about the blockchain</p><p>Source:  http://www.goldbitcoincasino.com/bitcoin-casinos-articles/img/bitcoin-blockchain-what-is-blockchain-techology.png
+            </p></figcaption>
+          </figure>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingThree" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Why should people use cryptocurrencies?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <p style="text-indent: 40px;">
+           Anyone is able to send money to anyone else anywhere in the world, almost instantly, with no middleman or extra fees.
+           They enable the inclusion of everyone in the worldwide financial system; Those that have access to modern day banking no longer have exclusive access.
+           The incredible amount of computing power generated when mining cryptocurrencies can be used to create a decentralized network for applications on top of the block chain.
+         </p>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingThree" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Are cryptocurrencies anonymous?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+          <p style="text-indent: 40px;">
+           There are some that are pseudonymous and there are some that are anonymous.
+           Those that are pseudonymous use ‘false names’ or disguised identities in transaction dealings. 
+           In the case of Bitcoin as an example, transactions contain an origin and destination public address; since this is the case, one can use a block explorer to exploit detailed information about Bitcoin blocks, addresses, and transactions. With this information, one could do an analysis to start building an explanation of where the money is flowing from and why.
+           On the other hand, those that are anonymous use special methods to ensure that the information stored on the blockchain is private in the interest of its users. Zcash, Monero and PIVX are examples of coins that use zero-knowledge proofs, ring signatures and stealth addresses to hide identifying information.
+         </p>
+         <figure class="text-center">
+            <img src="{% static 'cryptocurrency/img/zcash-transaction.jpg' %}" class="figure-img img-fluid rounded" alt="Zcash transaction">
+            <figcaption class="figure-caption"><p>A simple depiction of Zcash's transaction method</p><p>Source: https://z.cash/blog/zsl.html
+            </p></figcaption>
+          </figure>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingThree" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Are there transaction fees?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+      <div class="card-body">
+        <p style="text-indent: 40px;">
+           When using a cryptocurrency exchange, exchange fees or commissions are paid to the exchanges as their “cut.”
+           Exchanges may also charge additional fees for transferring coins to an outside wallet
+           The cryptocurrency network itself may ask for fees to pay the miners to include a transaction in a block sooner rather than later.
+         </p>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingThree" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          How can I buy/sell cryptocurrencies?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <p style="text-indent: 40px;">
+         Here are some ways to acquire cryptocurrencies:
+         Coinbase, Kraken and Poloniex are 3 of many cryptocurrency exchanges that will allow you to buy and sell cryptocurrencies at different exchange rates.
+         You can find a person that has cryptocurrencies and buy it off of them.
+         Mining is a good way to acquire cryptocurrency by contributing to the network and getting coins as a reward.
+         </p>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="headingThree" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+          What is market capitalization?
+        </button>
+      </h5>
+    </div>
+    <div id="collapse8" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <p style="text-indent: 40px;">
+          Market capitalization aka market cap is a measurement of a cerain cryptocurrency's size relative to all of the othes.
+          The bigger the market cap of a coin, the bigger the influence the coin has on the market.
+        </p>
+        
+        <p style="text-align:center;">
+          <math>
+           <mrow>
+              <mi>Market Cap</mi>
+              <mo>=</mo>
+              <mi>Price per Coin</mi>
+              <mo>x</mo>
+  		        <mi>Circulating Supply</mi>
+           </mrow>
+          </math>
+        </p>
+        
+        <figure class="text-center">
+            <img src="{% static 'cryptocurrency/img/marketcap.jpg' %}" class="figure-img img-fluid rounded" alt="Zcash transaction">
+            <figcaption class="figure-caption">
+              <p>A snippet from CoinMarketCap</p>
+              <p>Source: https://coinmarketcap.com/</p>
+            </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div id="darkBackground" class="card">
+    <div class="card-header" id="heading9" style="text-align:center;">
+      <h5 class="mb-0">
+        <button style="color:white;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+          What's the difference between coin & token?
+        </button>
+      </h5>
+    </div>
+    <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
+      <div class="card-body">
+        <p style="text-indent: 40px;">
+          <strong>Coin</strong> = a cryptocurrency that can operate independently.
+        </p>
+        
+        <p style="text-indent: 40px;">
+          <strong>Token</strong> = a cryptocurrency that depends on another cryptocurrency. A coin can serve as a platform for a token to operate.
+        </p>
+        
+        <p style="text-indent: 40px;">
+          A coin can serve as a platform for a token to operate.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

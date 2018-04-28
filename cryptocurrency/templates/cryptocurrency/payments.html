@@ -1,0 +1,133 @@
+{% extends 'cryptocurrency/base.html' %}
+{% block title %}Cryptocurrency | Payments{% endblock %}
+
+{% block body %}
+<!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+    
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 0px 0px 15px 15px;text-align:center;border-top: 0px;">
+    <font id="techFont3" style="font-size: 400%">Payment Records</font>
+</div>
+
+{% for a in paymentsArray %}
+<div class="col-sm-12">
+    <br>
+</div>
+
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 15px;text-align:center;">
+    <font id="techFont3" style="font-size: 400%">Phase: {{a.0}}</font>
+</div>
+
+<div class="col-sm-12">
+    <br>
+</div>
+
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 15px;text-align:center;">
+    {% for b in a.1%}
+    <br>
+    <table id="lightBackground" class="table table-dark table-sm" style="margin: 0px auto;text-align:center;">
+        <thead>
+            <tr>
+                <th colspan="3">Payout Period {{b.0}}</th>
+            </tr>
+            <tr>
+                <th>Payout #</th>
+                <th>Date</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in b.1.0 %}
+            <tr>
+                <td>{{c.num}}</td>
+                <td>{{c.date}}</td>
+                <td>{{c.amount}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="3">Total: {{b.2}}</td>
+            </tr>
+            <tr>
+                <td colspan="3">Notes: {{b.3}}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% endfor %}
+    <br>
+</div>
+{% endfor %}
+
+
+
+
+
+
+<!--<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 15px;text-align:center;">-->
+<!--    <h1>Total Collected: {{totalCollected}} ZEC</h1>-->
+<!--    <p></p>-->
+<!--</div>-->
+
+<!--<div class="col-sm-12">-->
+<!--    <br>-->
+<!--</div>-->
+
+<!--<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 15px;text-align:center;">-->
+<!--    <br>-->
+<!--    {% for var in array %}-->
+    
+<!--    <table id="lightBackground" class="table table-dark table-sm" style="margin: 0px auto;text-align:center;">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th colspan="3">Payout Period {{var.0}}</th>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <th>Payout #</th>-->
+<!--                <th>Date</th>-->
+<!--                <th>Amount</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            {% for var2 in var.1%}-->
+<!--            <tr>-->
+<!--                <td>{{var2.payoutPeriodnum}}</td>-->
+<!--                <td>{{var2.date}}</td>-->
+<!--                <td>{{var2.amount}}</td>-->
+<!--            </tr>-->
+<!--            {% endfor %}-->
+<!--            <tr>-->
+<!--                <td colspan="3" stye>Total: {{var.2}} ZEC</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td colspan="3">Notes: {{var.3}}</td>-->
+<!--            </tr>-->
+<!--            {% if var.4 == True %}-->
+<!--            <tr>-->
+<!--                <td colspan="3" style="background-color:green">Dividends: PAID</td>-->
+<!--            </tr>-->
+<!--            {% else %}-->
+<!--            <tr>-->
+<!--                <td colspan="3" style="background-color:">Dividends: Not yet paid</td>-->
+<!--            </tr>-->
+<!--            {% endif %}-->
+            
+            
+            
+<!--        </tbody>-->
+<!--    </table>-->
+    
+<!--    <br>-->
+    
+    
+<!--    {% endfor %}-->
+    
+    
+<!--</div>-->
+        
+        
+        
+        
+    <!--</div>-->
+<!--</div>-->
+
+
+{% endblock %}

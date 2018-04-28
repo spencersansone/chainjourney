@@ -1,0 +1,105 @@
+{% extends 'cryptocurrency/base.html' %}
+{% block title %}Cryptocurrency | Journey{% endblock %}
+
+{% block body %}
+{% load staticfiles %}
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 0px 0px 15px 15px;text-align:center;border-top: 0px;">
+    <font id="techFont3" style="font-size: 400%">My Mining Journey</font>
+</div>
+
+<div class="col-sm-12">
+    <br>
+</div>
+
+<div id="darkBackground" class="col-sm-12" style="border: 2px solid white;word-wrap: break-word;border-radius: 15px;">
+      <br>
+      <p style="text-indent: 40px">
+        During August of 2017, there was a day when I was thinking to myself “what can I do
+        to make some extra money on the side as a financial safety net?” At the time, I was working two jobs and had some 
+        extra money to invest. However, I didn’t really know what exactly to invest in. After doing much research, I found
+        out that there was such a thing as <a href="{% url 'cryptocurrency:faq' %}">cryptocurrency mining.</a>
+        For my senior project in high school, I had created my own gaming computer from parts and loved it; I figured that
+        this would be similar to that project except I would dedicate this computer to mining only.</p>
+      <p style="text-indent: 40px">
+        I searched through various YouTube videos and cryptocurrency forums in an attempt to get a clear understanding
+        of how exactly this process would work. YouTube channels such as Voskcoin, IMineBlocks and Genesis Mining have given
+        me many ideas and lessons that would further my interest in starting my own machines to get started. Many other 
+        cryptocurrency websites that discussed topics such as 
+        <a href="{% url 'cryptocurrency:sources' %}">exchanges, pools and other general cryptocurrency information</a>
+        were also very helpful. What astonished me about this process was 
+        that a will to learn, persistence and a connection to the internet can be all that one needs to learn about how to 
+        start a cryptocurrency mining operation (or anything else for that matter.) This realization led me to the beginning 
+        of my journey</p>
+      <p style="text-indent: 40px">
+	      The first step in my journey was figuring out what components I needed in order to build a mining computer. This task is 
+	      similar to building a regular desktop computer from scratch with a few modifications; these are the parts that I had 
+	      ordered:
+	      
+	      
+	      <ul>
+	      <li>USB Flash Drive with at least 8gb (can use SSD/HDD as an alternative)</li>
+	      <li>RAM: Crucial 4GB DDR4 (Single stick)</li>
+        <li>Motherboard: MSI Z170A SLI Plus</li>
+        <li>Processor: Intel Celeron G3900 Dual-core 2.8 GHz</li>
+        <li>Power Supply: Corsair RM1000x 1000W Gold Certified</li>
+	      <li>PCIe Risers: MintCell 6-Pack</li>
+	      <li>Video Card: GTX 1070 8GB GDDR5</li>
+	      </ul>
+	      
+	      
+	      </p>
+	      
+	     <p style="text-indent: 40px">
+	     I put all of the parts together and decided that it would be a good idea to install a solid state drive with Windows 10
+	     as the operating system. After powering on the computer and updating the operating system and drivers, I was ready to 
+	     start loading the essential programs. Firstly, I installed wallet software so that I could send and receive 
+	     cryptocurrencies. I chose to use Jaxx since it enables the user to utilize many different cryptocurrencies. There are also 
+	     many other wallets out there for everyone to try. <a href="/sources/">(Check out my Sources page)</a> Some cryptocurrency 
+	     exchanges will give you a wallet address as well if you prefer to keep it there.</p>
+	     
+	     <figure class="text-center">
+	       <img src="{% static 'cryptocurrency/img/jaxx.jpg' %}" class="figure-img img-fluid rounded" alt="Jaxx screenshot">
+	       <figcaption class="figure-caption">This is a screenshot of the Jaxx application.</figcaption>
+	     </figure>
+	     
+	     <p style="text-indent: 40px">
+	       After setting up my wallet, I had a wallet address for Ethereum and was ready to start thinking 
+  	     about what I needed to do to get started with mining. I decided that I was interested in mining Ethereum with my video card 
+  	     and installed Nanopool’s Claymore miner. After the program was configured, I started the mining program and then left it 
+  	     alone to run 24 hours a day and 7 days a week.</p>
+	       
+	       <figure class="text-center">
+  	       <img src="{% static 'cryptocurrency/img/claymore.jpg' %}" class="figure-img img-fluid rounded" alt="Claymore screenshot">
+  	       <figcaption class="figure-caption">A screenshot of Claymore in action.</figcaption>
+  	     </figure>
+	       </p>
+	       
+	       
+	     <p style="text-indent: 40px">
+	       After a month or two of my experience with mining Ethereum, I had noticed that there were many operating system crashes when 
+	       using Windows 10. This became frustrating when I had come home from a long day many times to realize that my miner was not 
+	       functional. Every second is valuable when mining and this was not an acceptable series of events. At this point, I decided 
+	       that something needed to change; I switched to a new service I found called SimpleMining. This awesome service allows
+	       those that mine cryptocurrencies to track their machines’ statistics through a website by installing an image file to a 
+	       flash drive and assigning an email address to a configuration file. The cost of using this service is $2 per machine per 
+	       month and can be paid by cryptocurrency. Overall, I am very satisfied with this service because I have experienced far less 
+	       crashing than I had before and can see live details quickly.
+	       
+	       
+	       <figure class="text-center">
+  	       <img src="{% static 'cryptocurrency/img/rigpic1.jpg' %}" class="figure-img img-fluid rounded" alt="Claymore screenshot">
+  	       <figcaption class="figure-caption"></figcaption>
+  	     </figure>
+  	     <figure class="text-center">
+  	       <img src="{% static 'cryptocurrency/img/rigpic2.jpg' %}" class="figure-img img-fluid rounded" alt="Claymore screenshot">
+  	       <figcaption class="figure-caption"></figcaption>
+  	     </figure>
+  	     <figure class="text-center">
+  	       <img src="{% static 'cryptocurrency/img/rigpic3.jpg' %}" class="figure-img img-fluid rounded" alt="Claymore screenshot">
+  	       <figcaption class="figure-caption"></figcaption>
+  	     </figure>
+	     </p>
+	</p>
+</p>
+    </div>
+{% endblock %}

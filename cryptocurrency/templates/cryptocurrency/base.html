@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <!--allow subtemplates to set page title-->
+        <title>{% block title %}{% endblock %}</title>
+        
+        {% load staticfiles %}
+        
+        <!--set website icon-->
+        <link rel="icon" type="image/png" href="{% static 'cryptocurrency/img/favicon.ico' %}"/>
+        
+        <!--recieve necessary bootstrap and jquery scripts-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <style type="text/css">
+		      @keyframes example {
+              0%   {background-color: #5b8e98;}
+              50%  {background-color: #a47167;}
+              100% {background-color: #5b8e98;}
+          }
+          
+          body{
+              background-color: black;
+              color: white;
+          }
+          
+          #mainJumbotron{
+              background-color: #5b8e98;
+              
+              animation-name: example;
+              animation-duration: 20s;
+              animation-iteration-count: infinite;
+              animation-direction: normal;
+              animation-timing-function: linear;
+          }
+          
+          @font-face { 
+            font-family: 'techFont1'; 
+            src: url({% static 'cryptocurrency/fonts/Liquidrom.ttf' %}) format('truetype');
+            font-weight:normal;
+          }
+          
+          #techFont1{
+            font-family: 'techFont1';
+          }
+          
+          @font-face { 
+            font-family: 'techFont2'; 
+            src: url({% static 'cryptocurrency/fonts/Maniac.ttf' %}) format('truetype');
+            font-weight:normal;
+          }
+          
+          #techFont2{
+            font-family: 'techFont2';
+          }
+          
+          @font-face { 
+            font-family: 'techFont3'; 
+            src: url({% static 'cryptocurrency/fonts/DrivingAround.ttf' %}) format('truetype');
+            font-weight:normal;
+          }
+          
+          #techFont3{
+            font-family: 'techFont3';
+          }
+          
+          @font-face { 
+            font-family: 'techFont4'; 
+            src: url({% static 'cryptocurrency/fonts/CHMCPixel.ttf' %}) format('truetype');
+            font-weight:normal;
+          }
+          
+          #techFont4{
+            font-family: 'techFont4';
+          }
+          
+          #darkBackground{
+            background-color:#030911;
+          }
+          
+          #lightBackground{
+            background-color:#0b1d3a;
+          }
+          
+          
+          $('rigGifs').carousel({
+            interval: 1000 * 5
+          });
+
+		</style>
+    </head>
+    <body>
+        <div id="mainJumbotron" class="jumbotron" style="margin-bottom: 0px;color:white;">
+			<div class="row justify-content-center" style="text-align:center;">
+				<!--6-->
+				<div class="col-sm-8" style="text-align:center;word-wrap: break-word;">
+					
+					<h1 id="techFont2" style="font-size: 400%">Chain Journey</h1>
+					<h4>A Cryptocurrency Site</h2>
+				</div>
+				<!--4-->
+				<div class="col-sm-2" style="text-align:center;">
+					<img style="width: 150px;border: solid 10px white;border-radius: 15px 15px 15px 15px" src="{% static 'cryptocurrency/img/websitelogo.jpg' %}" alt="zcash">
+				</div>
+			</div>
+		</div>
+        
+        <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="border:solid 2px white;background-color:#030911;border-left: 0px;border-right: 0px;">
+            <a class="navbar-brand" href="{% url 'cryptocurrency:home' %}">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        	    <span class="navbar-toggler-icon"></span>
+        	</button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        	    <ul class="navbar-nav">
+        	        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if request.user.username %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Members 
+                        {% if request.user.username %}
+        	               <img style="" src="{% static 'cryptocurrency/img/unlocked.png' %}" alt="loggedin">
+            	           </a>
+            	           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="{% url 'cryptocurrency:tracker' %}">Tracker</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="{% url 'cryptocurrency:payments' %}">Payments</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="{% url 'cryptocurrency:records' %}">Records</a>
+                            </div>
+            	           {% else %}
+            	               <img style="" src="{% static 'cryptocurrency/img/locked.png' %}" alt="notloggedin">
+            	           </a>
+            	           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="{% url 'cryptocurrency:login' %}">Login</a>
+                         </div>
+                        {% endif %}
+                      </li>
+        	        <li>
+        	            <a class="nav-item nav-link active" href="{% url 'cryptocurrency:faq' %}">FAQ</a>
+        	        </li>
+        	        <li>
+        	            <a class="nav-item nav-link active" href="{% url 'cryptocurrency:journey' %}">Journey</a>
+        	        </li>
+        	        <li>
+        	            <a class="nav-item nav-link active" href="{% url 'cryptocurrency:sources' %}">Sources</a>
+        	        </li>
+        	        <li>
+        	            <a class="nav-item nav-link active" href="{% url 'cryptocurrency:prices' %}">Prices</a>
+        	        </li>
+        		</ul>
+        		<ul class="navbar-nav ml-auto">
+        		    {% if request.user.username %}
+            	        <li>
+            	            <a id="techFont4" class="nav-item nav-link active" href="{% url 'cryptocurrency:userprofile' %}"><strong>Welcome {{request.user.username}}!</strong></a>
+            	        </li>
+            	        <li>
+            	            <a id="techFont4" class="nav-item nav-link active" href="{% url 'cryptocurrency:logout' %}">
+            	                <button type="button" class="btn btn-danger btn-sm">Logout</button>
+            	            </a>
+            	        </li>
+            	    {% else%}
+            	        <li>
+            	            <a id="techFont4" class="nav-item nav-link active" href="{% url 'cryptocurrency:login' %}">
+            	              <button type="button" class="btn btn-primary btn-sm">Login</button>
+            	            </a>
+            	        </li>
+        	        {% endif %}
+        	        
+        		</ul>
+            </div>
+        </nav>
+        
+        
+        
+        
+        <div class="container-fluid">
+            
+			<div class="row">
+			    
+					<!--allows for subtemplates to insert their own body content-->
+					{% block body %}
+                    {% endblock %}
+			  	
+			</div>
+		</div>
+    </body>
+</html>
